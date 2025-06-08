@@ -1,0 +1,21 @@
+{
+  "name": "gas-package",
+  "description": "deveolop GoogleAppScript command package",
+  "license": "MIT",
+  "version": "1.0.0",
+  "bin": "./cli.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo test",
+    "build": "node esbuild.js",
+    "stg-push": "npm run build && cp ./.clasp.staging.json .clasp.json && clasp push -f",
+    "prod-push": "npm run build && cp ./.clasp.production.json .clasp.json && clasp push -A ./.clasprc-production.json -f"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.90",
+    "esbuild": "^0.24.2",
+    "esbuild-gas-plugin": "^0.8.0",
+    "typescript": "^5.7.2"
+  }
+}
