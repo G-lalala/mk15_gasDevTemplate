@@ -8,6 +8,7 @@
   "scripts": {
     "test": "echo test",
     "build": "node esbuild.js",
+    "setup-claspjson": "cp ./.clasp.sample.json .clasp.staging.json && cp ./.clasp.sample.json .clasp.production.json",
     "stg-push": "npm run build && cp ./.clasp.staging.json .clasp.json && clasp push -f",
     "prod-push": "npm run build && cp ./.clasp.production.json .clasp.json && clasp push -A ./.clasprc-production.json -f"
   },
